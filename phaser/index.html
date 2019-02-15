@@ -44,7 +44,8 @@
         var songs = ['assets/bensound-dubstep.mp3', 'assets/bensound-endlessmotion.mp3', 'assets/bensound-summer.mp3', 'assets/CatAstroPhi_shmup_normal.wav'];
         var randomsong = Math.floor(Math.random() * 4);  // 0 ~ 3
 
-        this.load.audio('bomb', 'assets/399303__deleted-user-5405837__explosion-012.mp3')
+        this.load.spritesheet('vaca', 'assets/vaca.png', { frameWidth: 32, frameHeight: 48 } );
+        this.load.audio('bomb', 'assets/399303__deleted-user-5405837__explosion-012.mp3');
         this.load.audio('star sound', 'assets/zapThreeToneUp.ogg');
         this.load.audio('song', songs[randomsong]);
         this.load.image('sky', 'assets/sky.png');
@@ -54,6 +55,7 @@
         this.load.spritesheet('dude',
             'assets/dude.png',
             { frameWidth: 32, frameHeight: 48 }
+
         );
     }
 
@@ -63,11 +65,11 @@
     function create ()
     {
         this.anims.create({
-            key: 'left',
-            frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-            frameRate: 10,
-            repeat: -1
-        });
+                key: 'left',
+                frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+                frameRate: 10,
+                repeat: -1
+            });
 
         this.anims.create({
             key: 'turn',
@@ -81,6 +83,17 @@
             frameRate: 10,
             repeat: -1
         });
+        this.anims.create({
+            key: 'left',
+            frames: this.anims.generateFrameNumbers('vaca', { start: 0, end: 11 }),
+            frameRate: 10,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'right',
+            frames: this.anims.generateFrameNumbers('vaca', { start: 0, end: 11 }),
+            frameRate: 10,
+            repeat: -1 });
 
         this.add.image(400, 300, 'sky');
         platforms = this.physics.add.staticGroup();
@@ -158,6 +171,8 @@
 
         }
 
+
+
     }
 
     function hitBomb (player, bomb)
@@ -165,8 +180,8 @@
         music = this.sound.add ('bomb');
         music.play();
         this.physics.pause();
-
-        player.setTint(0xff0000);
+player.visible = false;
+        player.set(vaca);
 
         player.anims.play('turn');
 

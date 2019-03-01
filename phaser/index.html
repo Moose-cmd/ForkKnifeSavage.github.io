@@ -44,7 +44,8 @@
         var songs = ['assets/bensound-dubstep.mp3', 'assets/bensound-endlessmotion.mp3', 'assets/bensound-summer.mp3', 'assets/CatAstroPhi_shmup_normal.wav'];
         var randomsong = Math.floor(Math.random() * 4);  // 0 ~ 3
 
-        this.load.spritesheet('vaca', 'assets/vaca.png', { frameWidth: 32, frameHeight: 48 } );
+        this.load.audio('OOF', 'assets/OOF.mp3');
+        this.load.spritesheet('vaca', 'assets/vaca.png', { frameWidth: 100, frameHeight: 90 } );
         this.load.audio('bomb', 'assets/399303__deleted-user-5405837__explosion-012.mp3');
         this.load.audio('star sound', 'assets/zapThreeToneUp.ogg');
         this.load.audio('song', songs[randomsong]);
@@ -112,7 +113,7 @@
         player = this.physics.add.sprite(100, 450, 'dude');
         this.physics.add.collider(player, bombs, hitBomb, null, this);
 
-        player.body.setGravityY(300)
+        player.body.setGravityY(300);
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
         this.physics.add.collider(player, platforms);
@@ -177,15 +178,14 @@
 
     function hitBomb (player, bomb)
     {
-        music = this.sound.add ('bomb');
-        music.play();
+        var OOF = this.sound.add('OOF');
+        OOF.play();
         this.physics.pause();
-player.visible = false;
-        player.set(vaca);
+        player.visible = false;
 
-        player.anims.play('turn');
+        this.add.image(player.x, player.y, 'vaca');
 
-        gameOver = true;
+        gameOver = false;
     }
 
 

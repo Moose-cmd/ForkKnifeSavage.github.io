@@ -3,7 +3,7 @@
 
         <title>Vaca Music boxes!!!!</title>
         <style>
-        .box {width: 50px; height: 50px; margin: 50px;}
+        .box {width: 50px; height: 50px; margin: 50px; float : right;}
 
         #a {background-color: #2424ce6c; border: 2px solid darkgoldenrod}
         #b {background-color: rgb(75, 75, 223); border: 2px solid lightblue}
@@ -12,14 +12,60 @@
         #e {background-color: rgb(0, 89, 255); border: 2px solid lightblue}
         #f {background-color: lightblue; border: 2px solid goldenrod}
         #g {background-color: darkblue; border: 2px solid lightblue}
+        #i {background-color: darkblue; border: 2px solid rgb(36, 168, 212)}
+        #h {background-color: rgb(120, 120, 204); border: 2px solid lightblue}
+        #g {background-color: blue; cursor: crosshair}
+        #g:active{
+
+            background-color: coral
+        }
+
 
         
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
         $(document).ready(function() {
-            $('#c').mousedown(function() {
-                alert('Clicked!');
+            $('#c').mouseover(function() {
+                var cNote = document.get = document.getElementById('cAudio');
+                cNote.currentTime = 0;
+                cNote.play();
+        });
+        
+            $('#d').mousedown(function() {
+                var dNote = document.get = document.getElementById('dAudio');
+                dNote.currentTime = 0;
+                dNote.play();
+        });
+        
+            $('#a').mousedown(function() {
+                var aNote = document.get = document.getElementById('aAudio');
+                aNote.currentTime = 0;
+                aNote.play();
+        });
+        
+            $('#b').mousedown(function() {
+                var bNote = document.get = document.getElementById('bAudio');
+                bNote.currentTime = 0;
+                bNote.play();
+        });
+        
+            $('#e').mousedown(function() {
+                var eNote = document.get = document.getElementById('eAudio');
+                eNote.currentTime = 0;
+                eNote.play();
+        });
+        
+            $('#f').mousedown(function() {
+                var fNote = document.get = document.getElementById('fAudio');
+                fNote.currentTime = 0;
+                fNote.play();
+        });
+        
+            $('#g').mousedown(function() {
+                var gNote = document.get = document.getElementById('gAudio');
+                gNote.currentTime = 0;
+                gNote.play();
         });
 
 
@@ -33,14 +79,80 @@
         </style>
     </head>
     <body>
+        <audio id="cAudio">
+            <source src="media/c_note.mp3" type="audio/mpeg">
+            </source>
+            <source src="media/c_note.ogg" type="audio/ogg">
+            </source>
+            <source src="media/c_note.wav" type="audio/wav">
+            </source>
+        </audio>
+        <audio id="dAudio">
+            <source src="media/d_note.mp3" type="audio/mpeg">
+            </source>
+            <source src="media/d_note.ogg" type="audio/ogg">
+            </source>
+            <source src="media/d_note.wav" type="audio/wav">
+            </source>
+        </audio>
+        <audio id="aAudio">
+            <source src="media/a_note.mp3" type="audio/mpeg">
+            </source>
+            <source src="media/a_note.ogg" type="audio/ogg">
+            </source>
+            <source src="media/a_note.wav" type="audio/wav">
+            </source>
+        </audio>
+        <audio id="bAudio">
+            <source src="media/b_note.mp3" type="audio/mpeg">
+            </source>
+            <source src="media/b_note.ogg" type="audio/ogg">
+            </source>
+            <source src="media/b_note.wav" type="audio/wav">
+            </source>
+        </audio>
+        <audio id="eAudio">
+            <source src="media/e_note.mp3" type="audio/mpeg">
+            </source>
+            <source src="media/e_note.ogg" type="audio/ogg">
+            </source>
+            <source src="media/e_note.wav" type="audio/wav">
+            </source>
+        </audio>
+        <audio id="fAudio">
+            <source src="media/f_note.mp3" type="audio/mpeg">
+            </source>
+            <source src="media/f_note.ogg" type="audio/ogg">
+            </source>
+            <source src="media/f_note.wav" type="audio/wav">
+            </source>
+        </audio>
+        <audio id="gAudio">
+            <source src="media/g_note.mp3" type="audio/mpeg">
+            </source>
+            <source src="media/g_note.ogg" type="audio/ogg">
+            </source>
+            <source src="media/g_note.wav" type="audio/wav">
+            </source>
+        </audio>
+
+
+
+
         <h1>Music Boxes!</h1>
-    
-    <div class="box" id="a"></div>
-    <div class="box" id="b"></div>
-    <div class="box" id="c"></div>
-    <div class="box" id="d"></div>
-    <div class="box" id="e"></div>
-    <div class="box" id="f"></div>
-    <div class="box" id="g"></div>
-    </body>
+    <div>
+        <div class="box" id="a"></div>
+        <div class="box" id="b"></div>
+        <div class="box" id="c"></div>
+        <div class="box" id="d"></div>
+        <div class="box" id="e"></div>
+        <div class="box" id="f"></div>
+        <div class="box" id="g"></div>
+    </div>
+<div style="clear: both">
+    <div class="box" id="h"></div>
+    <div class="box" id="i"></div>
+</div>
+
+</body>
 </html>
